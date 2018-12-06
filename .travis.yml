@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - node # uses most recent stable node version
+services:
+  - postgresql # starts up postgres
+addons:
+  postgresql: '9.6' # highest available postgres version on Travis
+dist: trusty # uses trusty environment
+sudo: false # when on trusty, uses Docker containers for speed
+notifications:
+  email:
+    on_success: change # default: change (only when going from broken to fixed)
+    on_failure: always # default: always (which is annoying, as it should be)
+install:
+  - npm ci # faster, goes only from package-lock
+before_script:
+  - psql -c 'create database "stackathon2-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
+
+before_deploy:
+  - npm run build-client # make the bundle
+  - rm -rf node_modules # omit from the tarball, since we skip cleanup
+deploy:
+  skip_cleanup: true # prevents travis from deleting the build
+  provider: heroku
+  app: okurrr
+  api_key:
+    secure: "ZTHyWG1r+JSbtLaIZEOzJGi0sdnztgaEJhH63cN0ddKn3gYApYSuUef6FK2xdloCiLx0N0onUaz/z1dZcEiptKY+pogJZ9syG08befGCV3JT+dUvo/vDtui7DGVxgXEbnCY7HI8yp6+N3l9Jx1KFybxA1VSJetgcSeeykIY7RmY7AVa6klOTYwtOu2gnBSREt0mHk40U+okXtUE3KE5KyvXT2D+B154EMQdgb6+iQYMbq3iaIfsXun90gDsB2rqvwd9F8rgSHvigN/VxusHWkmMmllGfRBXk5cPmYlTHtqznzONKB9LyNY9UWjlCxaoiSELZyPdeRzNOsPPwXiT4/Qdqnf9QE/wuAWVTOf4GMXq1B8FjSi5+C7FQrmoimsiYCoxoNvVaw9MwspuJRgJKhkmdMvGOSfwBE8gkKrn1AO++m1KHpAki0ldqOIv2GDB74NW84fjnS8bpfxSYhLe9oAA24vv73u65/Bepikv1U4ZtBMYWj2kT+B/nkUV4FJme3DMV/doEO+cDE2kkdxu46Z38CuMHqjjF01lzOFF1dQuetuoTqzEP5fHuJh5e2IEn2wGstrZTGWLnUccrJk2SDVyGxJYOP4kCMjY58e+QI5Xq2nep0VkeTCNUs40uyo5BXcx2cNhaMUNfpO4A+rUnI/KenLZ8lu2rWEfjibvfKzA="
