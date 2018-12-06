@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Grid, Icon} from 'semantic-ui-react'
+import {Icon} from 'semantic-ui-react'
 
 class ScrollButton extends Component {
   constructor() {
@@ -7,7 +7,6 @@ class ScrollButton extends Component {
     this.state = {
       intervalId: 0
     }
-    // this.scrollStep = this.scrollStep.bind(this)
     this.scrollToTop = this.scrollToTop.bind(this)
   }
 

@@ -1,11 +1,8 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 import Projects from './projects'
 import About from './about'
 import {Grid, Icon, Responsive, Segment} from 'semantic-ui-react'
 import {Parallax} from 'react-scroll-parallax'
-
-const copy = 'LAW+RENC+ELIN.'.split('')
 
 class Home extends Component {
   componentDidMount() {

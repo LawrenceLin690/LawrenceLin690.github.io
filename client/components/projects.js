@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 import {Grid} from 'semantic-ui-react'
 import {Parallax} from 'react-scroll-parallax'
 
