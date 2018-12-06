@@ -1,0 +1,278 @@
+
+
+#navbar {
+  position: fixed;
+  top: 0%;
+  z-index: 1;
+  background-color: white;
+  width: 100%;
+}
+
+/* #menubar{
+  position: fixed;
+  top: 50%;
+  left: 2.8%;
+  width: 10.8%;
+  line-height: 0px;
+  z-index: 1;
+  font-size: 0.85em;
+} */
+
+#scroll {
+  position: fixed;
+  top: 50%;
+  left: 0%;
+  width: 10.8%;
+  z-index: 1;
+  font-size: 0.85em;
+  padding-left: 0;
+  margin-left: -45px;
+}
+
+button {
+  background: transparent;
+  border-style: none;
+  border: none;
+  outline: none;
+  letter-spacing: 0;
+}
+
+button:hover,
+button:active {
+  letter-spacing: 2px;
+}
+
+#contactbar {
+  position: fixed;
+  top: 45%;
+  left: 99.5%;
+  width: 1%;
+  justify-content: center;
+}
+
+#home {
+  justify-content: center;
+  font-size: 9vw;
+  font-weight: bolder;
+  line-height: 1em;
+  background: linear-gradient(
+    to right,
+    #049790 0%,
+    #049790 50%,
+    #f0e6dc 50%,
+    #f0e6dc 100%
+  );
+  height: 100vh;
+  padding-top: 15vh;
+  margin-left: 4vw;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: space-around;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+div span.homePage {
+  justify-content: center;
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  /* width: 3.51em; */
+  /* word-wrap: break-word; */
+  /* overflow: hidden; */
+  text-shadow: 3px 3px 0px #049790;
+  animation: fade-in-right 3s;
+  transform-origin: 50% 50%;
+}
+
+.period {
+  color: #ee9ba6;
+}
+
+.vertical {
+  -webkit-transform: rotate(-90deg);
+  /* Firefox */
+  -moz-transform: rotate(-90deg);
+  /* IE */
+  -ms-transform: rotate(-90deg);
+  /* Opera */
+  -o-transform: rotate(-90deg);
+}
+
+#arrow {
+  animation: MoveUpDown 2.5s linear infinite;
+  position: absolute;
+  left: 46%;
+  font-weight: normal;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+  }
+  /* 50% { opacity: 0; }
+  75% { opacity: 0; } */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    bottom: 10%;
+  }
+  50% {
+    bottom: 0%;
+  }
+}
+
+#about {
+  justify-content: center;
+  font-size: 2.5vw;
+  font-weight: bolder;
+  line-height: 1em;
+  background: #ee9ba6;
+  height: 80vh;
+  padding-left: 3vw;
+  padding-top: 3vh;
+  margin-left: 4vw;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+}
+
+.aboutDesc{
+  font-size: 1.5vw;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#projectHeader {
+  justify-content: left;
+  font-size: 2.5vw;
+  font-weight: bolder;
+  line-height: 1.1em;
+  background: #f0e6dc;
+  padding-left: 3vw;
+  padding-top: 3vh;
+  margin-left: 4vw;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  float: left;
+}
+
+#projects1 {
+  justify-content: center;
+  font-size: 2.5vw;
+  font-weight: bolder;
+  line-height: 1em;
+  background: #f0e6dc;
+  height: 65vh;
+  padding-left: 3vw;
+  padding-top: 3vh;
+  margin-left: 4vw;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+}
+
+#projects2 {
+  justify-content: center;
+  font-size: 2.5vw;
+  font-weight: bolder;
+  line-height: 1em;
+  background: #f0e6dc;
+  height: 67vh;
+  padding-left: 3vw;
+  padding-top: 3vh;
+  margin-left: 4vw;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+}
+
+.projectDesc{
+  font-size: 1.2vw;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 770px) {
+  #home,
+  #about,
+  #projectHeader,
+  #projects1,
+  #projects2 {
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+
+  #home {
+    padding-top: 5vh;
+    height: 60vh;
+  }
+
+  #about {
+    height: 65vh;
+  }
+
+  .aboutDesc{
+    font-size: 2vw;
+  }
+
+  #projectHeader {
+    height: 9vh;
+    padding-top: 0vh;
+  }
+
+  #projects1{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #projects1,
+  #projects2 {
+    padding-top: 0vh;
+    height: 70vh;
+    margin: 0;
+    font-size: 4vw;
+  }
+
+  .projectDesc{
+    font-size: 2vw;
+  }
+}
